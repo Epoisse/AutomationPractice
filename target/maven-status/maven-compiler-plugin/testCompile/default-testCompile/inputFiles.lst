@@ -1,0 +1,16 @@
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/utils/ExcelReader.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/steps/PageInitializers.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/utils/ConfigReader.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/steps/ContactUsFormSteps.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/steps/SignInSteps.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/pages/SignInPage.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/pages/ContactUsPage.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/steps/ForgotPasswordSteps.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/utils/CommonMethods.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/utils/Constants.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/runners/RunnerClass.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/steps/Hooks.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/runners/FailedRunner.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/pages/MyAccountPage.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/pages/HomePage.java
+/Users/sebvettal/eclipse-workspace/AutomationPractice/src/test/java/pages/ForgotPasswordPage.java

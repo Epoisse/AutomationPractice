@@ -6,7 +6,6 @@ public class Constants {
     public static final int EXPLICIT_WAIT = 20;
     public static final String TESTDATA_FILEPATH = System.getProperty("user.dir") + "/src/test/resources/testdata/ContactUsTestData.xlsx";
     public static final String SCREENSHOT_FILEPATH = System.getProperty("user.dir") + "/screenshots/";
+    public static final String TESTIMG_FILEPATH = System.getProperty("user.dir") + "/src/test/resources/testdata/images.png";
 
-    public static void main(String[] args) {
-    }
 }

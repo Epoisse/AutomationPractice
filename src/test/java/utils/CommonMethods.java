@@ -1,13 +1,12 @@
 package utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import net.andreinc.mockneat.MockNeat;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,12 +25,10 @@ public class CommonMethods extends PageInitializers {
         ConfigReader.readProperties(Constants.CONFIGURATION_FILEPATH);
         switch (ConfigReader.getPropertyValue("browser")) {
             case "chrome":
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                driver = WebDriverManager.chromedriver().create();
                 break;
             case "firefox":
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
+                driver = WebDriverManager.firefoxdriver().create();
                 break;
             default:
                 throw new RuntimeException("Invalid browser name");
@@ -69,7 +66,11 @@ public class CommonMethods extends PageInitializers {
 
     public static void sendText(WebElement element, String text) {
         element.clear();
-        element.sendKeys(text);
+        try {
+            element.sendKeys(text);
+        } catch (IllegalArgumentException e) {
+            element.sendKeys("");
+        }
     }
 
     public static String getTimeStamp(String pattern) {
@@ -90,7 +91,17 @@ public class CommonMethods extends PageInitializers {
         return picBytes;
     }
 
+    public static String getRandomEmail() {
+        MockNeat mockNeat = MockNeat.threadLocal();
+        return mockNeat.emails().val();
+    }
+
     public static void tearDown() {
         driver.quit();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getRandomEmail());
+        System.out.println(getRandomEmail());
     }
 }

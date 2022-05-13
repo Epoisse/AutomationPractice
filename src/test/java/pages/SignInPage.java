@@ -20,6 +20,9 @@ public class SignInPage extends CommonMethods {
     public @FindBy(xpath = "//div[@id='create_account_error']//li")
     WebElement createAccountErrorMessage;
 
+    @FindBy(xpath = "//div[@class='form_content clearfix']/p")
+    public WebElement informationMessage;
+
     // Registration
     public @FindBy(id = "email")
     WebElement emailField;

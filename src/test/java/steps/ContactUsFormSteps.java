@@ -5,6 +5,8 @@ import org.junit.Assert;
 import utils.CommonMethods;
 import utils.Constants;
 import utils.ExcelReader;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +20,7 @@ public class ContactUsFormSteps extends CommonMethods {
             selectOptionFromDD(contactUsPage.subjectHeadingDD, mapNewMessage.get("SubjectHeading"));
             sendText(contactUsPage.emailField, mapNewMessage.get("Email"));
             sendText(contactUsPage.orderReferenceField, mapNewMessage.get("OrderReference"));
-            sendText(contactUsPage.chooseFileBtn, mapNewMessage.get("File"));
+            sendText(contactUsPage.chooseFileBtn, Constants.TESTIMG_FILEPATH);
             sendText(contactUsPage.messageField, mapNewMessage.get("Message"));
             click(contactUsPage.sendBtn);
             Assert.assertTrue(contactUsPage.successMessage.isDisplayed());

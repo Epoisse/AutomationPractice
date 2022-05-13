@@ -14,4 +14,4 @@ Feature: 12324 Forgot password functionality
   Scenario: Password recovery with invalid email
     And user enters invalid email address
     And user clicks Retrieve Password button
-    Then user see error message on the screen
+    Then user sees error message on the screen

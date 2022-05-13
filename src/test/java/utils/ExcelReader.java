@@ -36,11 +36,15 @@ public class ExcelReader {
     }
 
     public static int getColsCount(int rowIndex) {
-        return sheet.getRow(rowIndex).getPhysicalNumberOfCells();
+        return sheet.getRow(rowIndex).getLastCellNum();
     }
 
     public static String getCellData(int rowIndex, int collIndex) {
-        return sheet.getRow(rowIndex).getCell(collIndex).toString();
+        try {
+            return sheet.getRow(rowIndex).getCell(collIndex).toString();
+        } catch (NullPointerException exception) {
+            return "";
+        }
     }
 
     public static List<Map<String, String>> excelIntoMap(String filePath, String sheetName) {
