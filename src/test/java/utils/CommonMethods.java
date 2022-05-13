@@ -20,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 public class CommonMethods extends PageInitializers {
     public static WebDriver driver;
+    public static MockNeat mockNeat;
 
     public static void openBrowserAndLaunchApp() {
         ConfigReader.readProperties(Constants.CONFIGURATION_FILEPATH);
@@ -92,16 +93,52 @@ public class CommonMethods extends PageInitializers {
     }
 
     public static String getRandomEmail() {
-        MockNeat mockNeat = MockNeat.threadLocal();
+        mockNeat = MockNeat.threadLocal();
         return mockNeat.emails().val();
     }
 
-    public static void tearDown() {
-        driver.quit();
+    public static String getRandomFirstName() {
+        mockNeat = MockNeat.threadLocal();
+        return mockNeat.names().first().val();
     }
 
-    public static void main(String[] args) {
-        System.out.println(getRandomEmail());
-        System.out.println(getRandomEmail());
+    public static String getRandomLastName() {
+        mockNeat = MockNeat.threadLocal();
+        return mockNeat.names().last().val();
+    }
+
+    public static String getRandomPassword() {
+        mockNeat = MockNeat.threadLocal();
+        return mockNeat.passwords().valStr();
+    }
+
+    public static String getRandomString() {
+        mockNeat = MockNeat.threadLocal();
+        return mockNeat.strings().valStr();
+    }
+
+    public static String getRandomCity() {
+        mockNeat = MockNeat.threadLocal();
+        return mockNeat.cities().us().val();
+    }
+
+    public static String getRandomState() {
+        mockNeat = MockNeat.threadLocal();
+        return mockNeat.usStates().valStr();
+    }
+
+
+    public static String getFakeZipcode() {
+        mockNeat = MockNeat.threadLocal();
+        return mockNeat.ints().bound(5).valStr();
+    }
+
+/*    public static String getFakePhoneNumber() {
+        mockNeat = MockNeat.threadLocal();
+        return mockNeat.getRandom().nextInt();
+    }*/
+
+    public static void tearDown() {
+        driver.quit();
     }
 }

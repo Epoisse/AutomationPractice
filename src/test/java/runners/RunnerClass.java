@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/",
         glue = "steps",
-        dryRun = false,
+        dryRun = true,
         monochrome = true,
-        tags = "@test4",
+        tags = "@test5",
         plugin = {"html:target/cucumber.html", "pretty", "json:target/cucumber.json",
         "rerun:target/failed.txt"}
 )

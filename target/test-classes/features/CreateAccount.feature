@@ -4,11 +4,12 @@ Feature: 2134 Create an account validation
     When user navigated to Sign In page
     And user sees information message "Please enter your email address to create an account."
 
-  @test3
+  @test5
   Scenario: Create user account
     And user enters valid email
     And user clicks Create an account button
-    #Then user redirects to personal information page
+    And fill in all required fields with valid credentials
+    Then account successfully created
 
   @test3 @negativeTest @examplesTable @scenarioOutline
   Scenario Outline: Create user account invalid email

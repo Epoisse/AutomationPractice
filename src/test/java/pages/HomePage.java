@@ -7,11 +7,11 @@ import utils.CommonMethods;
 
 public class HomePage extends CommonMethods {
 
-    public @FindBy(linkText = "Contact us")
-    WebElement contactUsBtn;
+    @FindBy(linkText = "Contact us")
+    public WebElement contactUsBtn;
 
-    public @FindBy(linkText = "Sign in")
-    WebElement signInBtn;
+    @FindBy(linkText = "Sign in")
+    public WebElement signInBtn;
 
     public HomePage() {
         PageFactory.initElements(driver, this);

@@ -7,38 +7,38 @@ import utils.CommonMethods;
 
 public class ContactUsPage extends CommonMethods {
 
-    public @FindBy(css = "a.home")
-    WebElement returnToHomeIcon;
+    @FindBy(css = "a.home")
+    public WebElement returnToHomeIcon;
 
-    public @FindBy(id = "id_contact")
-    WebElement subjectHeadingDD;
+    @FindBy(id = "id_contact")
+    public WebElement subjectHeadingDD;
 
-    public @FindBy(id = "email")
-    WebElement emailField;
+    @FindBy(id = "email")
+    public WebElement emailField;
 
-    public @FindBy(id = "id_order")
-    WebElement orderReferenceField;
+    @FindBy(id = "id_order")
+    public WebElement orderReferenceField;
 
-    public @FindBy(id = "fileUpload")
-    WebElement chooseFileBtn;
+    @FindBy(id = "fileUpload")
+    public WebElement chooseFileBtn;
 
-    public @FindBy(id = "message")
-    WebElement messageField;
+    @FindBy(id = "message")
+    public WebElement messageField;
 
-    public @FindBy(id = "submitMessage")
-    WebElement sendBtn;
+    @FindBy(id = "submitMessage")
+    public WebElement sendBtn;
 
-    public @FindBy(id = "desc_contact1")
-    WebElement infoMessage;
+    @FindBy(id = "desc_contact1")
+    public WebElement infoMessage;
 
-    public @FindBy(xpath = "//div[@class='alert alert-danger']//li")
-    WebElement errorMessage;
+    @FindBy(xpath = "//div[@class='alert alert-danger']//li")
+    public WebElement errorMessage;
 
-    public @FindBy(xpath = "//p[@class='alert alert-success']")
-    WebElement successMessage;
+    @FindBy(xpath = "//p[@class='alert alert-success']")
+    public WebElement successMessage;
 
-    public @FindBy(partialLinkText = "Home")
-    WebElement homeBtn;
+    @FindBy(partialLinkText = "Home")
+    public WebElement homeBtn;
 
     public ContactUsPage() {
         PageFactory.initElements(driver, this);
